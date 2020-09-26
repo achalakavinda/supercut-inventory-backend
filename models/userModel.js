@@ -2,6 +2,9 @@ const Sequelize = require('sequelize');
 const sequelize = require('../sequelizeserver');
 const bcrypt = require('bcryptjs');
 
+const Company = require('./companyModel');
+const CompanyDivision = require('./companyDivisionModel');
+
 const Model = Sequelize.Model;
 class User extends Model {
 
@@ -59,6 +62,22 @@ User.init({
     passwordChangedAt: {
         type: Sequelize.DATE,
         defaultValue: Sequelize.NOW
+    },
+    company_id: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+            model: Company,
+            key: 'id'
+        }
+    },
+    company_division_id: {
+        type: Sequelize.INTEGER,
+        allowNull: true,
+        references: {
+            model: CompanyDivision,
+            key: 'id'
+        }
     }
 }, {
     sequelize,

@@ -11,8 +11,15 @@ const globalErrorHandler = require('./controllers/errorController');
 
 const Company = require('./models/companyModel');
 const companyDivision = require('./models/companyDivisionModel');
+
 const User = require('./models/userModel');
+const Supplier = require('./models/supplierModel');
+const Customer = require('./models/customerModel');
+
 const Brand = require('./models/brandModel');
+const ItemCodeBatch = require('./models/itemCodeBatchModel');
+const ItemCode = require('./models/itemCodeModel');
+
 
 ////////////////////////////////////////////////////////////////////////MIDDLEWARES//////////////////////////////////////////////////////////////////////////////////
 //you can get recommended middleware options from the https://expressjs.com/en/resources/middleware.html
